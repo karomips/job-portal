@@ -1,3 +1,4 @@
+/* --- Animated Bubbles: Subtle, not distracting --- */
 .contact-bg-animated {
   position: fixed;
   inset: 0;
@@ -9,53 +10,68 @@
 .contact-bg-bubble {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.18;
-  animation: floatBubble 12s infinite alternate;
-  filter: blur(2px);
+  opacity: 0.13;
+  animation: floatBubble 14s infinite alternate;
+  filter: blur(3px);
 }
 
 .contact-bg-bubble.b1 {
-  width: 220px; height: 220px;
+  width: 260px; height: 260px;
   background: #1976d2;
-  left: 5vw; top: 10vh;
+  left: 3vw; top: 8vh;
   animation-delay: 0s;
 }
 .contact-bg-bubble.b2 {
-  width: 160px; height: 160px;
+  width: 180px; height: 180px;
   background: #3ca55c;
-  right: 8vw; top: 25vh;
+  right: 7vw; top: 22vh;
   animation-delay: 2s;
 }
 .contact-bg-bubble.b3 {
-  width: 120px; height: 120px;
+  width: 140px; height: 140px;
   background: #42a5f5;
-  left: 20vw; bottom: 8vh;
+  left: 18vw; bottom: 7vh;
   animation-delay: 4s;
 }
 .contact-bg-bubble.b4 {
-  width: 90px; height: 90px;
+  width: 110px; height: 110px;
   background: #b2f2bb;
-  right: 18vw; bottom: 12vh;
+  right: 15vw; bottom: 10vh;
   animation-delay: 1s;
 }
 
 @keyframes floatBubble {
   0% { transform: translateY(0) scale(1);}
-  100% { transform: translateY(-30px) scale(1.08);}
+  100% { transform: translateY(-40px) scale(1.10);}
 }
 
+/* --- Main content shifted for sidebar --- */
+.contact-main-content {
+  margin-left: 250px;
+  padding: 3rem 1.5rem 2rem 1.5rem;
+  min-height: 100vh;
+  transition: margin-left 0.3s;
+  background: linear-gradient(120deg, #181f2a 0%, #232b3e 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* --- Contact Card Container --- */
 .contact-container {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 2.5rem 2rem;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(36, 102, 36, 0.10), 0 2px 24px rgba(25, 118, 210, 0.10);
-  border: 1px solid #e0e0e0;
+  max-width: 950px;
+  width: 100%;
+  margin: 2.5rem auto 0 auto;
+  padding: 2.7rem 2.2rem;
+  background: rgba(255,255,255,0.98);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(36, 102, 36, 0.10), 0 2px 24px rgba(25, 118, 210, 0.13);
+  border: 1.5px solid #e0e0e0;
   animation: fadeIn 0.8s;
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5rem;
+  gap: 2.7rem;
   justify-content: space-between;
   position: relative;
   z-index: 2;
@@ -66,10 +82,18 @@
   to { opacity: 1; transform: translateY(0);}
 }
 
+/* --- Contact Form --- */
 .contact-form {
   flex: 1 1 340px;
   min-width: 320px;
-  max-width: 400px;
+  max-width: 420px;
+  background: #f8fff8;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(66, 165, 245, 0.08);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .contact-form h2 {
@@ -77,12 +101,14 @@
   text-align: center;
   margin-bottom: 1rem;
   font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .contact-desc {
   color: #555;
-  font-size: 1rem;
+  font-size: 1.08rem;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -102,10 +128,10 @@
 .contact-field input,
 .contact-field textarea {
   width: 100%;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.1rem;
+  border-radius: 9px;
   border: 1.5px solid #b2f2bb;
-  font-size: 1rem;
+  font-size: 1.05rem;
   background: #f8fff8;
   transition: border 0.2s, box-shadow 0.2s;
   resize: none;
@@ -125,20 +151,20 @@
   background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
   color: white;
   border: none;
-  padding: 0.8rem 0;
-  border-radius: 8px;
+  padding: 0.9rem 0;
+  border-radius: 9px;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.13rem;
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
   transition: background 0.3s, transform 0.2s, box-shadow 0.2s, color 0.2s;
-  margin-top: 0.5rem;
+  margin-top: 0.7rem;
   letter-spacing: 0.5px;
 }
 
 .contact-btn:hover {
   background: linear-gradient(90deg, #1565c0 60%, #1976d2 100%);
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.04);
   box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
   color: #e3f2fd;
 }
@@ -151,24 +177,31 @@
   padding: 0.8rem 1rem;
   text-align: center;
   font-weight: 600;
+  box-shadow: 0 1px 4px rgba(60, 165, 92, 0.08);
 }
 
+/* --- Contact Info Card --- */
 .contact-info {
   flex: 1 1 240px;
   min-width: 220px;
   max-width: 320px;
-  background: #f8fff8;
-  border-radius: 14px;
-  padding: 1.5rem 1rem;
-  box-shadow: 0 2px 8px rgba(60, 165, 92, 0.06);
+  background: #232b3e;
+  border-radius: 16px;
+  padding: 2rem 1.2rem;
+  box-shadow: 0 2px 12px rgba(25, 118, 210, 0.08);
   margin-top: 2.5rem;
   height: fit-content;
+  color: #e3f2fd;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .contact-info h3 {
-  color: #1976d2;
-  margin-bottom: 1rem;
-  font-size: 1.15rem;
+  color: #42a5f5;
+  margin-bottom: 1.1rem;
+  font-size: 1.18rem;
+  font-weight: 700;
 }
 
 .contact-info ul {
@@ -178,13 +211,16 @@
 }
 
 .contact-info li {
-  margin-bottom: 1rem;
-  color: #444;
-  font-size: 1rem;
+  margin-bottom: 1.1rem;
+  color: #b2f2bb;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .contact-info a {
-  color: #1976d2;
+  color: #42a5f5;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s;
@@ -192,17 +228,53 @@
 
 .contact-info a:hover {
   color: #3ca55c;
+  text-decoration: underline;
 }
 
-@media (max-width: 900px) {
+/* --- Responsive adjustments for sidebar and content --- */
+@media (max-width: 1100px) {
+  .contact-main-content {
+    margin-left: 70vw;
+    padding: 1.5rem 0.5rem;
+  }
   .contact-container {
     flex-direction: column;
     align-items: stretch;
     gap: 1.5rem;
     padding: 1.5rem 0.5rem;
+    margin: 2rem auto 0 auto;
   }
   .contact-info {
     margin-top: 1.5rem;
     max-width: 100%;
   }
+}
+
+@media (max-width: 700px) {
+  .contact-main-content {
+    margin-left: 0;
+    padding: 1rem 0.2rem;
+  }
+  .contact-container {
+    margin: 1rem auto 0 auto;
+    padding: 1rem 0.2rem;
+  }
+  .contact-form, .contact-info {
+    max-width: 100%;
+    min-width: 0;
+    padding: 1.2rem 0.5rem;
+  }
+}
+
+/* --- Subtle Scrollbar Styling for Modern Look --- */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #232b3e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1976d2;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #42a5f5;
 }
