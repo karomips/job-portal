@@ -1,0 +1,40 @@
+.homepage-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(120deg, #e8f5e9 0%, #f4f6f8 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(36, 102, 36, 0.10);
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.homepage-container h1 {
+  color: #246624;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+
+.homepage-container p {
+  color: #444;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.homepage-banner {
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto 0 auto;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(60, 165, 92, 0.10);
+}
