@@ -3,9 +3,10 @@ import './Navbar.css';
 
 function Navbar() {
   const handleSignOut = () => {
-    // Add your signout logic here (e.g., clear auth, redirect, etc.)
+    // Remove login info from localStorage on logout
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('user');
     alert('Signed out!');
-    // Optionally redirect to login or home
     window.location.href = '/login';
   };
 
