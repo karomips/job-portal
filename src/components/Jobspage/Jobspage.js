@@ -1,40 +1,16 @@
-import React, { useState } from 'react';
-
-const jobsData = [
-  {
-    id: 1,
-    title: 'Barangay Health Worker',
-    company: 'Barangay Mangan-vaca Health Center',
-    location: 'Barangay Mangan-vaca',
-    description: 'Assist in community health programs and provide basic healthcare services to residents.',
-  },
-  {
-    id: 2,
-    title: 'Community Outreach Assistant',
-    company: 'Mangan-vaca Community Office',
-    location: 'Barangay Mangan-vaca',
-    description: 'Support outreach activities and help organize local events for the barangay.',
-  },
-  {
-    id: 3,
-    title: 'Frontend Developer',
-    company: 'Tech Solutions Inc.',
-    location: 'Remote',
-    description: 'Develop and maintain user interfaces for web applications using React.',
-  },
-  {
-    id: 4,
-    title: 'Backend Developer',
-    company: 'CodeWorks',
-    location: 'Manila, PH',
-    description: 'Build and manage server-side logic and databases for scalable applications.',
-  },
-];
+import React, { useEffect, useState } from 'react';
 
 function Jobspage() {
   const [search, setSearch] = useState('');
+  const [jobs, setJobs] = useState([]);
 
-  const filteredJobs = jobsData.filter(
+  useEffect(() => {
+    fetch('http://localhost:5000/api/jobs')
+      .then(res => res.json())
+      .then(data => setJobs(data));
+  }, []);
+
+  const filteredJobs = jobs.filter(
     job =>
       job.title.toLowerCase().includes(search.toLowerCase()) ||
       job.company.toLowerCase().includes(search.toLowerCase()) ||

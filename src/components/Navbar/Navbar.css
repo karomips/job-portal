@@ -54,6 +54,23 @@
   box-shadow: 0 2px 8px rgba(178, 242, 187, 0.2);
 }
 
+.signout-btn {
+  background: #fff;
+  color: #246624;
+  border: 1.5px solid #3ca55c;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.signout-btn:hover {
+  background: #3ca55c;
+  color: #fff;
+  border: 1.5px solid #246624;
+}
+
 @media (max-width: 700px) {
   .navbar {
     flex-direction: column;

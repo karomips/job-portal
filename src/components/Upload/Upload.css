@@ -1,0 +1,75 @@
+.upload-container {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #e8f5e9 0%, #f4f6f8 100%);
+}
+
+.upload-form {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(36, 102, 36, 0.10);
+  border: 1px solid #e0e0e0;
+  min-width: 340px;
+  max-width: 350px;
+  width: 100%;
+  animation: fadeIn 0.8s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.upload-form h2 {
+  color: #246624;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+.upload-desc {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.upload-field {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.upload-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #246624 60%, #3ca55c 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(60, 165, 92, 0.10);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  margin-top: 0.5rem;
+}
+
+.upload-btn:hover {
+  background: linear-gradient(90deg, #3ca55c 60%, #246624 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(60, 165, 92, 0.18);
+}
+
+.upload-success {
+  margin-top: 1rem;
+  color: #246624;
+  background: #e0ffe6;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-weight: 600;
+}
