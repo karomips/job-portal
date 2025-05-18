@@ -37,4 +37,41 @@
   display: block;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(60, 165, 92, 0.10);
+  opacity: 0;
+}
+
+.homepage-banner.fade-in {
+  opacity: 1;
+}
+
+/* Homepage.css */
+.fade-in {
+  opacity: 1 !important;
+  transition: opacity 0.7s;
+}
+
+/* Spinner styles */
+.lds-dual-ring {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 4px;
+  border-radius: 50%;
+  border: 4px solid #246624;
+  border-color: #246624 transparent #246624 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
