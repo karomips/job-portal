@@ -19,6 +19,12 @@ function Jobspage() {
 
   return (
     <div style={{ maxWidth: '1100px', margin: '2rem auto', padding: '2rem', background: '#fff', borderRadius: '16px', boxShadow: '0 4px 24px rgba(36,102,36,0.08)' }}>
+      <div className="jobspage-bg-animated">
+        <div className="jobspage-bg-bubble b1"></div>
+        <div className="jobspage-bg-bubble b2"></div>
+        <div className="jobspage-bg-bubble b3"></div>
+        <div className="jobspage-bg-bubble b4"></div>
+      </div>
       <h1 style={{ color: '#246624', marginBottom: '1.5rem' }}>Job Listings</h1>
       <input
         type="text"

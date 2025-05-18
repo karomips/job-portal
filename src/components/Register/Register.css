@@ -1,21 +1,73 @@
+.register-bg-animated {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.register-bg-bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.18;
+  animation: floatBubble 12s infinite alternate;
+  filter: blur(2px);
+}
+
+.register-bg-bubble.b1 {
+  width: 220px; height: 220px;
+  background: #1976d2;
+  left: 5vw; top: 10vh;
+  animation-delay: 0s;
+}
+.register-bg-bubble.b2 {
+  width: 160px; height: 160px;
+  background: #3ca55c;
+  right: 8vw; top: 25vh;
+  animation-delay: 2s;
+}
+.register-bg-bubble.b3 {
+  width: 120px; height: 120px;
+  background: #42a5f5;
+  left: 20vw; bottom: 8vh;
+  animation-delay: 4s;
+}
+.register-bg-bubble.b4 {
+  width: 90px; height: 90px;
+  background: #b2f2bb;
+  right: 18vw; bottom: 12vh;
+  animation-delay: 1s;
+}
+
+@keyframes floatBubble {
+  0% { transform: translateY(0) scale(1);}
+  100% { transform: translateY(-30px) scale(1.08);}
+}
+
 .register-container {
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  background: linear-gradient(120deg, #e8f5e9 0%, #f4f6f8 100%);
+  background: linear-gradient(120deg, #e3f2fd 0%, #e8f5e9 100%);
+  position: relative;
+  z-index: 1;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 .register-form {
   background: #fff;
   padding: 2.5rem 2rem;
   border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(36, 102, 36, 0.10);
+  box-shadow: 0 8px 32px rgba(36, 102, 36, 0.10), 0 2px 24px rgba(25, 118, 210, 0.10);
   border: 1px solid #e0e0e0;
   min-width: 340px;
   max-width: 350px;
   width: 100%;
   animation: fadeIn 0.8s;
+  position: relative;
+  z-index: 2;
 }
 
 @keyframes fadeIn {
@@ -24,11 +76,12 @@
 }
 
 .register-form h2 {
-  color: #246624;
+  color: #1976d2;
   text-align: center;
   margin-bottom: 2rem;
   font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
   font-size: 1.7rem;
+  letter-spacing: 1px;
 }
 
 .register-field {
@@ -38,7 +91,7 @@
 .register-field label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #3ca55c;
+  color: #1976d2;
   font-weight: 600;
   font-size: 1rem;
 }
@@ -50,13 +103,15 @@
   border: 1.5px solid #b2f2bb;
   font-size: 1rem;
   background: #f8fff8;
-  transition: border 0.2s;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(66, 165, 245, 0.04);
 }
 
 .register-field input:focus {
-  border: 2px solid #3ca55c;
+  border: 2px solid #1976d2;
   outline: none;
-  background: #eaffea;
+  background: #e3f2fd;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
 }
 
 .register-password-wrapper {
@@ -69,22 +124,24 @@
   margin-left: 0.5rem;
   background: none;
   border: none;
-  color: #3ca55c;
+  color: #1976d2;
   font-weight: 600;
   cursor: pointer;
   font-size: 0.95rem;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .register-showpass-btn:hover {
-  background: #e0ffe6;
+  background: #e3f2fd;
+  color: #3ca55c;
 }
 
-.register-btn {
+.register-btn,
+.upload-btn {
   width: 100%;
-  background: linear-gradient(90deg, #246624 60%, #3ca55c 100%);
+  background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
   color: white;
   border: none;
   padding: 0.8rem 0;
@@ -92,15 +149,18 @@
   cursor: pointer;
   font-size: 1.1rem;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(60, 165, 92, 0.10);
-  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s, color 0.2s;
   margin-top: 0.5rem;
+  letter-spacing: 0.5px;
 }
 
-.register-btn:hover {
-  background: linear-gradient(90deg, #3ca55c 60%, #246624 100%);
+.register-btn:hover,
+.upload-btn:hover {
+  background: linear-gradient(90deg, #1565c0 60%, #1976d2 100%);
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 4px 16px rgba(60, 165, 92, 0.18);
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
+  color: #e3f2fd;
 }
 
 .register-footer {
@@ -111,7 +171,7 @@
 }
 
 .register-footer a {
-  color: #246624;
+  color: #1976d2;
   text-decoration: none;
   font-weight: 600;
   margin-left: 0.3rem;
@@ -120,4 +180,13 @@
 
 .register-footer a:hover {
   color: #3ca55c;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .register-form {
+    min-width: 90vw;
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
 }

@@ -34,6 +34,12 @@ function Register() {
 
   return (
     <div className="register-container">
+      <div className="register-bg-animated">
+        <div className="register-bg-bubble b1"></div>
+        <div className="register-bg-bubble b2"></div>
+        <div className="register-bg-bubble b3"></div>
+        <div className="register-bg-bubble b4"></div>
+      </div>
       <form className="register-form" onSubmit={handleSubmit}>
         <h2>Create an Account</h2>
         <div className="register-field">
@@ -80,7 +86,7 @@ function Register() {
           </div>
         </div>
         <button className="register-btn" type="submit">Register</button>
-        <button
+        <button class="upload-btn"
           type="button"
           className="register-btn"
           style={{ marginTop: '1rem', background: '#3ca55c' }}

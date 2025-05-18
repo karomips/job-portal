@@ -15,6 +15,12 @@ function Contact() {
 
   return (
     <div className="contact-container">
+      <div className="contact-bg-animated">
+        <div className="contact-bg-bubble b1"></div>
+        <div className="contact-bg-bubble b2"></div>
+        <div className="contact-bg-bubble b3"></div>
+        <div className="contact-bg-bubble b4"></div>
+      </div>
       <form className="contact-form" onSubmit={handleSubmit}>
         <h2>Contact Admin / Community</h2>
         <p className="contact-desc">

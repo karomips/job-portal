@@ -46,6 +46,14 @@ function Homepage() {
       gap: '2rem',
       minHeight: '400px'
     }}>
+      {/* Background Animation */}
+      <div className="homepage-bg-animated">
+        <div className="homepage-bg-bubble b1"></div>
+        <div className="homepage-bg-bubble b2"></div>
+        <div className="homepage-bg-bubble b3"></div>
+        <div className="homepage-bg-bubble b4"></div>
+      </div>
+
       {/* Slideshow Container */}
       <div className="homepage-slideshow" style={{
         width: '100%',

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #246624 60%, #3ca55c 100%);
+  background: linear-gradient(90deg, #243666 60%, #3c7ba5 100%);
   padding: 1rem 2rem;
   color: white;
   box-shadow: 0 2px 8px rgba(36, 102, 36, 0.08);
@@ -21,7 +21,7 @@
 }
 
 .navbar-brand::before {
-  content: "🌱";
+  content: "";
   font-size: 1.5rem;
   vertical-align: middle;
 }

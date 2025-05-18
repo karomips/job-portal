@@ -28,6 +28,12 @@ function Login() {
 
   return (
     <div className="login-container">
+      <div className="login-bg-animated">
+        <div className="login-bg-bubble b1"></div>
+        <div className="login-bg-bubble b2"></div>
+        <div className="login-bg-bubble b3"></div>
+        <div className="login-bg-bubble b4"></div>
+      </div>
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Login to Job Portal</h2>
         <div className="login-field">
