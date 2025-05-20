@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Postpage.css';
 
 function Postpage() {
@@ -6,14 +7,7 @@ function Postpage() {
   const [company, setCompany] = useState('');
   const [location, setLocation] = useState('');
   const [description, setDescription] = useState('');
-  const [jobs, setJobs] = useState([]);
-
-  // Fetch jobs from backend on mount
-  useEffect(() => {
-    fetch('http://localhost:5000/api/jobs')
-      .then(res => res.json())
-      .then(data => setJobs(data));
-  }, []);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,18 +22,36 @@ function Postpage() {
     })
       .then(res => res.json())
       .then(addedJob => {
-        setJobs([addedJob, ...jobs]);
+        // Clear form
         setTitle('');
         setCompany('');
         setLocation('');
         setDescription('');
+        // Show success message
+        alert('Job posted successfully!');
+      })
+      .catch(err => {
+        alert('Failed to post job. Please try again.');
       });
+  };
+
+  const handleViewJobs = () => {
+    navigate('/jobs'); // Navigate to jobs listing page
   };
 
   return (
     <div className="postpage-container">
-      <form className="postpage-form" onSubmit={handleSubmit}>
+      <div className="postpage-header">
         <h2>Post a Job</h2>
+        <button 
+          className="view-jobs-btn" 
+          onClick={handleViewJobs}
+        >
+          View Posted Jobs
+        </button>
+      </div>
+
+      <form className="postpage-form" onSubmit={handleSubmit}>
         <div className="postpage-field">
           <label htmlFor="title">Job Title</label>
           <input
@@ -86,22 +98,6 @@ function Postpage() {
         </div>
         <button className="postpage-btn" type="submit">Post Job</button>
       </form>
-
-      <div className="postpage-listings">
-        <h3>Posted Jobs</h3>
-        {jobs.length === 0 ? (
-          <p className="postpage-nojobs">No jobs posted yet.</p>
-        ) : (
-          jobs.map((job, idx) => (
-            <div className="postpage-jobcard" key={job._id || idx}>
-              <h4>{job.title}</h4>
-              <p><strong>Company:</strong> {job.company}</p>
-              <p><strong>Location:</strong> {job.location}</p>
-              <p>{job.description}</p>
-            </div>
-          ))
-        )}
-      </div>
     </div>
   );
 }

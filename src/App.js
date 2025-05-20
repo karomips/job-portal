@@ -11,6 +11,7 @@ import Register from './components/Register/Register';
 import Jobspage from './components/Jobspage/Jobspage';
 import ProtectedRoute from './components/ProtectedRoute';
 import Landing from './components/Landing/Landing';
+import Profile from './components/Profile/Profile';
 
 function AppLayout() {
   const location = useLocation();
@@ -25,6 +26,7 @@ function AppLayout() {
         <Route path="/register" element={<Register />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/landing" element={<Landing />} />
+        <Route path="/profile" element={<Profile />} />
         <Route
           path="/home"
           element={
