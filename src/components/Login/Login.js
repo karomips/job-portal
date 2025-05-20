@@ -35,7 +35,7 @@ function Login() {
         <div className="login-bg-bubble b4"></div>
       </div>
       <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Login to Job Portal</h2>
+        <h2>Login to Mangan-Vaca Job Portal</h2>
         <div className="login-field">
           <label htmlFor="email">Email</label>
           <input

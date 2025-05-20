@@ -10,6 +10,7 @@ import Upload from './components/Upload/Upload';
 import Register from './components/Register/Register';
 import Jobspage from './components/Jobspage/Jobspage';
 import ProtectedRoute from './components/ProtectedRoute';
+import Landing from './components/Landing/Landing';
 
 function AppLayout() {
   const location = useLocation();
@@ -23,6 +24,7 @@ function AppLayout() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/upload" element={<Upload />} />
+        <Route path="/landing" element={<Landing />} />
         <Route
           path="/home"
           element={
