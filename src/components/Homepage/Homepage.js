@@ -49,8 +49,17 @@ function Homepage() {
       {/* Main content shifted right for sidebar */}
       <div className="homepage-main-content">
         <section className="homepage-welcome-section">
-          <h1>Welcome to Barangay Mangan-vaca Job Portal</h1>
-          <p>Find the latest job opportunities in our community</p>
+          <div className="welcome-header">
+            <img 
+              src="/barangay_logo.jpg" 
+              alt="Barangay Mangan-vaca Logo" 
+              className="welcome-logo"
+            />
+            <div className="welcome-text">
+              <h1>Welcome to Barangay Mangan-vaca Job Portal</h1>
+              <p>Find the latest job opportunities in our community</p>
+            </div>
+          </div>
         </section>
         
         <div className="homepage-content-row">
