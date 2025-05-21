@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Jobspage.css';  // Make sure this line exists
 
 function Jobspage() {
   const [search, setSearch] = useState('');
   const [jobs, setJobs] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:5000/api/jobs')
@@ -16,6 +19,10 @@ function Jobspage() {
       job.company.toLowerCase().includes(search.toLowerCase()) ||
       job.location.toLowerCase().includes(search.toLowerCase())
   );
+
+  const handleApply = (job) => {
+    navigate(`/apply/${job._id}`, { state: { job } });
+  };
 
   return (
     <div style={{ maxWidth: '1100px', margin: '2rem auto', padding: '2rem', background: '#fff', borderRadius: '16px', boxShadow: '0 4px 24px rgba(36,102,36,0.08)' }}>
@@ -56,19 +63,8 @@ function Jobspage() {
               <p><strong>Location:</strong> {job.location}</p>
               <p style={{ marginBottom: '1rem' }}>{job.description}</p>
               <button
-                style={{
-                  background: 'linear-gradient(90deg, #246624 60%, #3ca55c 100%)',
-                  color: 'white',
-                  border: 'none',
-                  padding: '0.6rem 1.4rem',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                  fontSize: '1.05rem',
-                  fontWeight: 600,
-                  boxShadow: '0 2px 8px rgba(60, 165, 92, 0.10)',
-                  transition: 'background 0.3s, transform 0.2s, box-shadow 0.2s'
-                }}
-                onClick={() => alert('Application feature coming soon!')}
+                className="apply-button"
+                onClick={() => handleApply(job)}
               >
                 Apply Now
               </button>

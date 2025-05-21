@@ -68,7 +68,7 @@ body,
   z-index: 2;
   padding: 3rem 1rem 2rem 1rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto; /* Center the container */
 }
 
 /* --- Slideshow section --- */
@@ -361,15 +361,17 @@ body,
 
 /* Add this to shift the main content for the sidebar */
 .homepage-main-content {
-  margin-left: 230px; /* width of your sidebar */
+  /* margin-left: 230px; */ /* Remove this line */
   padding: 2.5rem 1rem 1rem 1rem;
   min-height: 100vh;
   transition: margin-left 0.3s;
+  max-width: 1400px;
+  margin: 0 auto; /* Center the content */
 }
 
 @media (max-width: 700px) {
   .homepage-main-content {
-    margin-left: 70vw;
+    margin: 0 auto; /* Center on mobile too */
     padding: 1rem 0.5rem;
   }
 }

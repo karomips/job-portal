@@ -12,6 +12,8 @@ import Jobspage from './components/Jobspage/Jobspage';
 import ProtectedRoute from './components/ProtectedRoute';
 import Landing from './components/Landing/Landing';
 import Profile from './components/Profile/Profile';
+import Messages from './components/Messages/Messages';
+import Apply from './components/Apply/Apply';
 
 function AppLayout() {
   const location = useLocation();
@@ -27,6 +29,8 @@ function AppLayout() {
         <Route path="/upload" element={<Upload />} />
         <Route path="/landing" element={<Landing />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/messages" element={<Messages />} />
+        <Route path="/apply" element={<Apply />} />
         <Route
           path="/home"
           element={

@@ -24,10 +24,13 @@ function Navbar() {
         <li><NavLink to="/jobs">Jobs</NavLink></li>
         <li><NavLink to="/post-job">Post a Job</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
+        <li><NavLink to="/messages">Messages</NavLink></li>
       </ul>
-      <button className="signout-btn" onClick={handleSignOut}>
-        Sign Out
-      </button>
+      <div className="navbar-actions">
+        <button className="signout-btn" onClick={handleSignOut}>
+          Sign Out
+        </button>
+      </div>
     </nav>
   );
 }
